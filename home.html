@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Amine Benameur | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Mohammed Amine Benameur</h2>
+
+            <ul class="menu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#social">Réseaux sociaux</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Bonjour, je suis <span>Mohammed Amine</span></h1>
+
+            <h3>Développeur Web • Créateur de contenu YouTube • Designer</h3>
+
+            <p>
+                Je crée des sites web modernes, rapides et responsives en utilisant
+                <span>HTML et CSS</span>.
+
+                Je réalise également des <span>publications Instagram, des logos et des designs graphiques</span>.
+
+                Enfin, je possède des compétences en <span>montage vidéo</span>.
+            </p>
+
+        </div>
+
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about" class="about">
+
+        <h2>À propos</h2>
+
+        <p>
+            Passionné par le développement web, j'aime concevoir des interfaces modernes
+            et offrir une excellente expérience utilisateur.
+
+            Je suis également passionné par le design graphique, le montage vidéo,
+            les mathématiques et l'informatique.
+        </p>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section class="skills" id="skills">
+
+        <h2>Compétences</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>HTML5</h3>
+            </div>
+
+            <div class="card">
+                <h3>CSS3</h3>
+            </div>
+
+            <div class="card">
+                <h3>Montage vidéo</h3>
+            </div>
+
+            <div class="card">
+                <h3>Responsive Design</h3>
+            </div>
+
+            <div class="card">
+                <h3>Création de logos</h3>
+            </div>
+
+            <div class="card">
+                <h3>Design graphique</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact</h2>
+
+        <form>
+
+            <input type="text" placeholder="Votre nom" required>
+
+            <input type="email" placeholder="Votre adresse e-mail" required>
+
+            <textarea placeholder="Votre message" rows="6" required></textarea>
+
+            <button type="submit">Envoyer</button>
+
+        </form>
+
+    </section>
+
+    <!-- Social -->
+
+    <section id="social" class="social">
+
+        <h2>Réseaux sociaux</h2>
+
+        <ul>
+
+            <li>
+                <a href="https://www.instagram.com/mohammed_amine_benameur/?hl=en" target="_blank">
+                    Instagram
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.youtube.com/channel/UCtmAiFy3Dt12o_NZsOZb-nw" target="_blank">Youtube</a>
+            </li>
+
+        </ul>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Mohammed Amine Benameur. Tous droits réservés.</p>
+
+    </footer>
+    <script>
+        // ==============================
+// Sélection des éléments
+// ==============================
+
+const form = document.querySelector("form");
+const nomInput = document.querySelector('input[type="text"]');
+const emailInput = document.querySelector('input[type="email"]');
+const messageInput = document.querySelector("textarea");
+
+// ==============================
+// Validation Email
+// ==============================
+
+function emailValide(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+// ==============================
+// Affichage des messages
+// ==============================
+
+function afficherMessage(message, type = "success") {
+
+    const ancienneAlerte = document.querySelector(".alert-message");
+
+    if (ancienneAlerte) {
+        ancienneAlerte.remove();
+    }
+
+    const div = document.createElement("div");
+
+    div.className = `alert-message ${type}`;
+    div.textContent = message;
+
+    form.prepend(div);
+
+    setTimeout(() => {
+        div.remove();
+    }, 3000);
+}
+
+// ==============================
+// Soumission du formulaire
+// ==============================
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const nom = nomInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    // Vérification des champs
+
+    if (!nom || !email || !message) {
+
+        afficherMessage(
+            "Veuillez remplir tous les champs.",
+            "error"
+        );
+
+        return;
+    }
+
+    // Vérification Email
+
+    if (!emailValide(email)) {
+
+        afficherMessage(
+            "Veuillez entrer une adresse e-mail valide.",
+            "error"
+        );
+
+        emailInput.focus();
+
+        return;
+    }
+
+    // Simulation d'envoi
+
+    afficherMessage(
+        "✅ Votre message a été envoyé avec succès !",
+        "success"
+    );
+
+    form.reset();
+
+    nomInput.focus();
+
+});
+    </script>
+
+</body>
+
+</html>
