@@ -1,0 +1,410 @@
+/*==========================
+        CONTACT
+==========================*/
+
+.contact{
+    background:var(--background);
+}
+
+.contact form{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border:2px solid #dbe4f0;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+.contact input:focus,
+.contact textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 10px rgba(217,119,6,.25);
+
+}
+
+.contact textarea{
+
+    resize:none;
+
+    min-height:180px;
+
+}
+
+.contact button{
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact button:hover{
+
+    background:var(--secondary);
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================
+      SOCIAL MEDIA
+==========================*/
+
+.social{
+
+    background:white;
+
+    text-align:center;
+
+}
+
+.social ul{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    list-style:none;
+
+    flex-wrap:wrap;
+
+}
+
+.social a{
+
+    text-decoration:none;
+
+    color:var(--text);
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.social a:hover{
+
+    color:var(--primary);
+
+}
+
+.social img{
+
+    width:45px;
+
+    transition:.3s;
+
+    margin-bottom:8px;
+
+}
+
+.social img:hover{
+
+    transform:scale(1.15);
+
+}
+
+/*==========================
+        FOOTER
+==========================*/
+
+footer{
+
+    background:#111827;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:50px;
+
+}
+
+footer p{
+
+    font-size:15px;
+
+    letter-spacing:1px;
+
+}
+
+/*==========================
+      ANIMATIONS
+==========================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero-content,
+.hero-image,
+.card,
+.project,
+.about,
+.contact{
+
+    animation:fadeUp 1s ease;
+
+}
+
+/*==========================
+      RESPONSIVE
+==========================*/
+
+@media (max-width:992px){
+
+    .hero{
+
+        flex-direction:column-reverse;
+
+        text-align:center;
+
+        gap:50px;
+
+        padding-top:150px;
+
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+    }
+
+    .hero h3{
+
+        font-size:24px;
+
+    }
+
+    .hero-image img{
+
+        width:300px;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .menu{
+
+        gap:20px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    section{
+
+        padding:80px 6%;
+
+    }
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .hero h3{
+
+        font-size:20px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .hero-image img{
+
+        width:250px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .project-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .social ul{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .logo{
+
+        font-size:24px;
+
+    }
+
+    .menu{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .hero-image img{
+
+        width:220px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .contact button{
+
+        width:100%;
+
+    }
+
+}
+.alert-message{
+
+    padding:15px;
+    margin-bottom:20px;
+    border-radius:10px;
+    font-weight:bold;
+    text-align:center;
+    animation:fadeIn .4s;
+
+}
+
+.success{
+
+    background:#d1fae5;
+    color:#065f46;
+
+}
+
+.error{
+
+    background:#fee2e2;
+    color:#991b1b;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
